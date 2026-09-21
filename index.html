@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SK Men's Zone</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- TOP HEADER -->
+    <header class="top-header">
+
+        <div class="logo-area">
+            <img src="images/logo.png" alt="SK Men's Zone Logo"
+                 onerror="this.style.display='none'">
+
+            <h1>SK MEN'S ZONE</h1>
+        </div>
+
+    </header>
+
+
+    <!-- SEARCH HEADER -->
+    <div class="search-header">
+
+        <button class="menu-btn" onclick="openMenu()">☰</button>
+
+        <div class="search-box">
+            <span>🔍</span>
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search for products"
+                onkeyup="searchProducts()">
+        </div>
+
+        <button class="user-btn">♙</button>
+
+    </div>
+
+
+    <!-- SIDE MENU -->
+    <div id="sideMenu" class="side-menu">
+
+        <button class="close-btn" onclick="closeMenu()">×</button>
+
+        <h2>SK MEN'S ZONE</h2>
+
+        <a href="#home" onclick="closeMenu()">Home</a>
+        <a href="#categories" onclick="closeMenu()">Categories</a>
+        <a href="#products" onclick="closeMenu()">Shop</a>
+        <a href="#about" onclick="closeMenu()">About Us</a>
+        <a href="#contact" onclick="closeMenu()">Contact</a>
+
+    </div>
+
+
+    <!-- HERO / BANNER -->
+    <section class="hero" id="home">
+
+        <img src="images/banner.jpg.png"
+             alt="SK Men's Zone Fashion Banner"
+             onerror="this.style.display='none'">
+
+        <div class="hero-content">
+
+            <p>NEW COLLECTION</p>
+
+            <h2>SK MEN'S ZONE</h2>
+
+            <h3>STYLE FOR EVERY MAN</h3>
+
+            <a href="#products" class="shop-btn">
+                SHOP NOW
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- OFFER -->
+    <section class="offer-box">
+
+        <h2>🔥 SPECIAL OFFER</h2>
+
+        <p>
+            Trendy Men's Wear at Affordable Prices
+        </p>
+
+    </section>
+
+
+    <!-- CATEGORY -->
+    <section id="categories" class="section">
+
+        <h2 class="section-title">
+            Category
+        </h2>
+
+        <div class="categories">
+
+            <div class="category-card"
+                 onclick="filterCategory('Shirt')">
+
+                <div class="category-icon">👔</div>
+
+                <h3>Shirts</h3>
+
+            </div>
+
+
+            <div class="category-card"
+                 onclick="filterCategory('T-Shirt')">
+
+                <div class="category-icon">👕</div>
+
+                <h3>T-Shirts</h3>
+
+            </div>
+
+
+            <div class="category-card"
+                 onclick="filterCategory('Jeans')">
+
+                <div class="category-icon">👖</div>
+
+                <h3>Jeans</h3>
+
+            </div>
+
+
+            <div class="category-card"
+                 onclick="filterCategory('Pant')">
+
+                <div class="category-icon">🩳</div>
+
+                <h3>Pants</h3>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- NEW ARRIVAL -->
+    <section id="products" class="section">
+
+        <h2 class="section-title">
+            New Arrival
+        </h2>
+
+
+        <div class="products" id="productContainer">
+
+
+            <!-- PRODUCT 1 -->
+            <div class="product-card" data-category="Shirt">
+
+                <div class="product-image">
+
+                    <span class="discount">
+                        -20%
+                    </span>
+
+                    <button class="wishlist"
+                            onclick="addWishlist(this)">
+                        ♡
+                    </button>
+
+                    <img src="images/shirt1.jpg"
+                         alt="Premium Casual Shirt">
+
+                </div>
+
+
+                <div class="product-info">
+
+                    <h3>
+                        Premium Casual Shirt
+                    </h3>
+
+                    <p class="description">
+                        Stylish men's casual shirt
+                    </p>
+
+                    <p class="price">
+
+                        <span class="old-price">
+                            ₹999
+                        </span>
+
+                        <span class="new-price">
+                            ₹799
+                        </span>
+
+                    </p>
+
+                    <p class="sizes">
+                        Sizes: M L XL XXL
+                    </p>
+
+                    <button class="option-btn"
+                            onclick="orderProduct('Premium Casual Shirt', '799')">
+
+                        Select Options
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 2 -->
+            <div class="product-card" data-category="Shirt">
+
+                <div class="product-image">
+
+                    <span class="discount">
+                        -15%
+                    </span>
+
+                    <button class="wishlist"
+                            onclick="addWishlist(this)">
+                        ♡
+                    </button>
+
+                    <img src="images/shirt2.jpg"
+                         alt="Formal Shirt">
+
+                </div>
+
+
+                <div class="product-info">
+
+                    <h3>
+                        Premium Formal Shirt
+                    </h3>
+
+                    <p class="description">
+                        Comfortable formal wear
+                    </p>
+
+                    <p class="price">
+
+                        <span class="old-price">
+                            ₹1199
+                        </span>
+
+                        <span class="new-price">
+                            ₹999
+                        </span>
+
+                    </p>
+
+                    <p class="sizes">
+                        Sizes: M L XL XXL
+                    </p>
+
+                    <button class="option-btn"
+                            onclick="orderProduct('Premium Formal Shirt', '999')">
+
+                        Select Options
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 3 -->
+            <div class="product-card" data-category="T-Shirt">
+
+                <div class="product-image">
+
+                    <span class="discount">
+                        -25%
+                    </span>
+
+                    <button class="wishlist"
+                            onclick="addWishlist(this)">
+                        ♡
+                    </button>
+
+                    <img src="images/tshirt1.jpg"
+                         alt="Premium T-Shirt">
+
+                </div>
+
+
+                <div class="product-info">
+
+                    <h3>
+                        Premium T-Shirt
+                    </h3>
+
+                    <p class="description">
+                        Trendy everyday T-Shirt
+                    </p>
+
+                    <p class="price">
+
+                        <span class="old-price">
+                            ₹799
+                        </span>
+
+                        <span class="new-price">
+                            ₹599
+                        </span>
+
+                    </p>
+
+                    <p class="sizes">
+                        Sizes: M L XL XXL
+                    </p>
+
+                    <button class="option-btn"
+                            onclick="orderProduct('Premium T-Shirt', '599')">
+
+                        Select Options
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 4 -->
+            <div class="product-card" data-category="Jeans">
+
+                <div class="product-image">
+
+                    <span class="discount">
+                        -20%
+                    </span>
+
+                    <button class="wishlist"
+                            onclick="addWishlist(this)">
+                        ♡
+                    </button>
+
+                    <img src="images/jeans1.jpg"
+                         alt="Men Jeans">
+
+                </div>
+
+
+                <div class="product-info">
+
+                    <h3>
+                        Premium Denim Jeans
+                    </h3>
+
+                    <p class="description">
+                        Comfortable stylish denim
+                    </p>
+
+                    <p class="price">
+
+                        <span class="old-price">
+                            ₹1499
+                        </span>
+
+                        <span class="new-price">
+                            ₹1199
+                        </span>
+
+                    </p>
+
+                    <p class="sizes">
+                        Sizes: 30 32 34 36
+                    </p>
+
+                    <button class="option-btn"
+                            onclick="orderProduct('Premium Denim Jeans', '1199')">
+
+                        Select Options
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 5 -->
+            <div class="product-card" data-category="Pant">
+
+                <div class="product-image">
+
+                    <span class="discount">
+                        -15%
+                    </span>
+
+                    <button class="wishlist"
+                            onclick="addWishlist(this)">
+                        ♡
+                    </button>
+
+                    <img src="images/pant1.jpg"
+                         alt="Formal Pant">
+
+                </div>
+
+
+                <div class="product-info">
+
+                    <h3>
+                        Men's Formal Pant
+                    </h3>
+
+                    <p class="description">
+                        Smart formal trousers
+                    </p>
+
+                    <p class="price">
+
+                        <span class="old-price">
+                            ₹1199
+                        </span>
+
+                        <span class="new-price">
+                            ₹999
+                        </span>
+
+                    </p>
+
+                    <p class="sizes">
+                        Sizes: 30 32 34 36
+                    </p>
+
+                    <button class="option-btn"
+                            onclick="orderProduct('Men Formal Pant', '999')">
+
+                        Select Options
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- COLLECTION BANNER -->
+    <section class="collection-banner">
+
+        <div>
+
+            <h2>
+                UPGRADE YOUR STYLE
+            </h2>
+
+            <p>
+                Discover our latest men's collection
+            </p>
+
+            <a href="#products" class="shop-btn">
+                EXPLORE COLLECTION
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+    <section id="about" class="about section">
+
+        <h2 class="section-title">
+            About SK Men's Zone
+        </h2>
+
+        <p>
+            SK Men's Zone is a men's fashion store offering
+            stylish and comfortable clothing at affordable prices.
+            Explore our latest collection and order easily through
+            WhatsApp.
+        </p>
+
+    </section>
+
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact section">
+
+        <h2 class="section-title">
+            Contact Us
+        </h2>
+
+        <p>
+            📞 Phone: 72000 48460
+        </p>
+        
+         <p>
+            📧 Email: skmenszone@gmail.com
+        </p>
+
+        <p>
+            📍 Location: https://maps.app.goo.gl/zJRYVbrfGgMMSfid8
+        </p>
+
+        <a href="#" id="whatsappMain" class="whatsapp-btn">
+            💬 Chat on WhatsApp
+        </a>
+
+    </section>
+
+
+    <!-- WHATSAPP FLOATING BUTTON -->
+    <a href="#" id="whatsappFloat" class="whatsapp-float">
+        ☎
+    </a>
+
+
+    <!-- BOTTOM MOBILE NAVIGATION -->
+    <nav class="bottom-nav">
+
+        <a href="#home">
+            <span>⌂</span>
+            Home
+        </a>
+
+        <a href="#products">
+            <span>🛍</span>
+            Shop
+        </a>
+
+        <a href="#products">
+            <span>♡</span>
+            Wishlist
+        </a>
+
+        <a href="#products">
+            <span>🛒</span>
+            Cart
+        </a>
+
+    </nav>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <h2>
+            SK MEN'S ZONE
+        </h2>
+
+        <p>
+            Style • Quality • Confidence
+        </p>
+
+        <p class="copyright">
+            © 2026 SK Men's Zone. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
